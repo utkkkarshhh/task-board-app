@@ -1,0 +1,30 @@
+.assignee-input {
+  background-color: white;
+  font-family: Poppins;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 5px;
+  margin: auto 5px;
+}
+
+.priority-input {
+  background-color: white;
+  font-family: Poppins;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 5px;
+  margin: auto 5px;
+}
+
+.date-input {
+  background-color: white;
+  width: 200px;
+  font-family: Poppins;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 5px;
+  margin: auto 5px;
+}
