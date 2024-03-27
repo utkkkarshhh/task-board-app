@@ -1,0 +1,48 @@
+.addBox {
+  max-height: 400px !important;
+  background-color: white;
+  min-width: 18%;
+  border-radius: 12px;
+  margin: 10px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.headerTitle {
+  color: white;
+  background-color: purple;
+  border-radius: 12px 12px 0px 0px;
+  margin: 0px 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.addBoxBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto auto;
+}
+
+.addIcon {
+  font-weight: bold;
+  font-size: 50px;
+  margin: 0px;
+  opacity: 0.5;
+}
+
+.addSectionText {
+  font-weight: bold;
+  margin: 0px;
+  opacity: 0.5;
+  margin-bottom: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+  .addBox {
+    width: 90%;
+    margin: 10px auto;
+  }
+}

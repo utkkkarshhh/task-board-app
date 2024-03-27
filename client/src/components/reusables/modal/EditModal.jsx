@@ -17,19 +17,38 @@ const EditModal = (props) => {
         <div className="edit-modal-body">
           <form className="edit-modal-form">
             <label>Title: </label>
-            <input type="text" />
+            <input disabled type="text" />
             <label>Description: </label>
-            <input type="text" />
+            <input disabled type="text" />
             <label>Team: </label>
-            <input type="text" />
+            <input disabled type="text" />
             <label>Assignees: </label>
-            <input type="text" />
-            <label>Priority: </label>
-            <select className="priority-input" name="priority" id="priority">
-              <option value="P0">P0</option>
-              <option value="P1">P1</option>
-              <option value="P2">P2</option>
-            </select>
+            <input disabled type="text" />
+            <div className="edit-modal-bottom">
+              <div>
+                <label>Priority: </label>
+                <select
+                  className="priority-input"
+                  name="priority"
+                  id="priority"
+                >
+                  <option value="P0">P0</option>
+                  <option value="P1">P1</option>
+                  <option value="P2">P2</option>
+                </select>
+              </div>
+              <div>
+                <label>Status: </label>
+                <select className="status-input" name="status" id="status">
+                  <option value="assign">Assign</option>
+                  <option value="in-progress">In Progress</option>
+                  <option value="completed">Completed</option>
+                  <option value="deployed">Deployed</option>
+                  <option value="deffered">Deffered</option>
+                </select>
+              </div>
+            </div>
+
             <Button className="add-button" name="Submit" />
           </form>
         </div>

@@ -9,10 +9,12 @@
 
 .task-box-area {
   margin: auto auto;
-  justify-content: center;
+  justify-content: flex-start;
   display: flex;
   flex-direction: row;
+  overflow-x: scroll; 
 }
+
 
 .filter-section {
   display: flex;

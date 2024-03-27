@@ -3,6 +3,7 @@
   background-color: rgb(229, 227, 227);
   border-radius: 4px;
   padding: 10px 10px;
+  cursor: grabbing;
 }
 
 .task-card-header {

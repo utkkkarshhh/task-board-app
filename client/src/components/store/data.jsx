@@ -1,5 +1,6 @@
 const pendingTasks = [
   {
+    id: 1,
     title: "Develop landing page",
     priority: "P0",
     content:
@@ -8,6 +9,7 @@ const pendingTasks = [
     status: "Assign",
   },
   {
+    id: 2,
     title: "Review marketing campaign",
     priority: "P1",
     content:
@@ -16,6 +18,7 @@ const pendingTasks = [
     status: "Assign",
   },
   {
+    id: 3,
     title: "Prepare presentation slides",
     priority: "P2",
     content:
@@ -27,6 +30,7 @@ const pendingTasks = [
 
 const inProgressTasks = [
   {
+    id: 4,
     title: "Update backend API",
     priority: "P2",
     content:
@@ -35,6 +39,7 @@ const inProgressTasks = [
     status: "In Progress",
   },
   {
+    id: 5,
     title: "Update backend API",
     priority: "P2",
     content:
@@ -43,6 +48,7 @@ const inProgressTasks = [
     status: "In Progress",
   },
   {
+    id: 6,
     title: "Update backend API",
     priority: "P2",
     content:
@@ -54,6 +60,7 @@ const inProgressTasks = [
 
 const completedTasks = [
   {
+    id: 7,
     title: "Client meeting",
     priority: "P1",
     content:
@@ -65,6 +72,7 @@ const completedTasks = [
 
 const deployedTasks = [
   {
+    id: 8,
     title: "Deploy version 2.0",
     priority: "P2",
     content:
@@ -73,6 +81,7 @@ const deployedTasks = [
     status: "Deployed",
   },
   {
+    id: 9,
     title: "Deploy version 2.0",
     priority: "P2",
     content:
@@ -84,6 +93,7 @@ const deployedTasks = [
 
 const deferredTasks = [
   {
+    id: 10,
     title: "Research new technology",
     priority: "P0",
     content:
