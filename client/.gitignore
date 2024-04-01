@@ -1,14 +1,16 @@
-
+# Dependency directories
 /node_modules
-/.pnp
-.pnp.js
+
+# Compiled output
+/build
+/dist
+
+# Environment variables
 .env
 
-# testing
-/coverage
-
-# production
-/build
+# IDE/Editor files
+.idea
+.vscode
 
 # misc
 .DS_Store

@@ -29,7 +29,7 @@ const EditModal = (props) => {
         status: props.task.status,
       });
     }
-  }, []);
+  }, [props.task]);
 
   const handleInputChange = (e) => {
     e.preventDefault();
