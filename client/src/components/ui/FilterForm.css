@@ -1,3 +1,9 @@
+.filter-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .assignee-input {
   background-color: white;
   font-family: Poppins;
@@ -28,3 +34,21 @@
   padding: 5px 5px;
   margin: auto 5px;
 }
+
+.clear-filter-button {
+  background-color: rgb(19, 92, 217);
+  padding: 4px 6px 2px 10px;
+  border: none;
+  font-size: 20px;
+  border-radius: 12px;
+  color: white;
+  transition: 300ms;
+}
+
+.clear-filter-button:hover {
+  background-color: rgb(13, 72, 173);
+  color: white;
+  cursor: pointer;
+}
+
+

@@ -1,20 +1,66 @@
 import React, { useState } from "react";
 import "./FilterForm.css";
+import { MdDeleteSweep } from "react-icons/md";
 
-const FilterForm = () => {
-  const [dateRange, setDateRange] = useState("");
+const FilterForm = ({ setFilterValues }) => {
+  const [assignee, setAssignee] = useState("");
+  const [priority, setPriority] = useState("");
+  const [date, setDate] = useState("");
 
-  const handleDateRangeChange = (event) => {
-    setDateRange(event.target.value);
+  const clearFilterHandler = (e) => {
+    e.preventDefault();
+    setAssignee("");
+    setPriority("");
+    setDate("");
+    setFilterValues({ assignee: "", priority: "", date: "" });
   };
+
+  const handleAssigneeChange = (event) => {
+    const value = event.target.value;
+    setAssignee(value);
+    setFilterValues((prevFilterValues) => ({
+      ...prevFilterValues,
+      assignee: value,
+    }));
+  };
+
+  const handlePriorityChange = (event) => {
+    const value = event.target.value;
+    setPriority(value);
+    setFilterValues((prevFilterValues) => ({
+      ...prevFilterValues,
+      priority: value,
+    }));
+  };
+
+  const handleDateChange = (event) => {
+    const value = event.target.value;
+    setDate(value);
+    setFilterValues((prevFilterValues) => ({
+      ...prevFilterValues,
+      date: value,
+    }));
+  };
+
   return (
     <div className="filter-form">
       <div>
         <form method="post" action="/">
           <label className="filer-form-label">Filter By: </label>
-          <input className="assignee-input" placeholder="Assignee Name"></input>
-          <select className="priority-input" name="priority" id="priority">
-            <option value="" disabled selected hidden>
+          <input
+            className="assignee-input"
+            placeholder="Assignee Name"
+            value={assignee}
+            onChange={handleAssigneeChange}
+          />
+          <select
+            className="priority-input"
+            name="priority"
+            id="priority"
+            value={priority}
+            onChange={handlePriorityChange}
+          >
+            <option value="" disabled>
               Priority
             </option>
             <option value="P0">P0</option>
@@ -23,12 +69,16 @@ const FilterForm = () => {
           </select>
           <input
             className="date-input"
-            type="text"
-            placeholder="DD/MM/YYYY - DD/MM/YYYY"
-            value={dateRange}
-            onChange={handleDateRangeChange}
+            type="date"
+            value={date}
+            onChange={handleDateChange}
           />
         </form>
+      </div>
+      <div>
+        <button className="clear-filter-button" onClick={clearFilterHandler}>
+          <MdDeleteSweep />
+        </button>
       </div>
     </div>
   );

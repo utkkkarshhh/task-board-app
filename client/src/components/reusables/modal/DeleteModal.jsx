@@ -21,7 +21,7 @@ const DeleteModal = (props) => {
             </p>
           </div>
           <div className="modal-buttons">
-            <Button name="Delete" />
+            <Button name="Delete" onClick={props.onDelete} />
             <Button name="Cancel" onClick={props.onClose} />
           </div>
         </div>

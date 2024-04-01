@@ -4,6 +4,7 @@ import { HiDotsVertical } from "react-icons/hi";
 import Button from "../buttons/Button";
 import DeleteModal from "../modal/DeleteModal";
 import EditModal from "../modal/EditModal";
+import axios from "axios";
 
 const TaskCard = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -28,6 +29,21 @@ const TaskCard = (props) => {
 
   const editModalCloseHandler = () => {
     setEditModalOpen(false);
+  };
+
+  const handleDelete = async () => {
+    console.log(props.task._id);
+    try {
+      console.log("Entered try");
+      await axios.delete(`${process.env.REACT_APP_BASE_URL}/api/deleteTask`, {
+        params: {
+          taskId: props.task._id,
+        },
+      });
+      deleteModalCloseHandler();
+    } catch (error) {
+      console.error("Error deleting task:", error);
+    }
   };
 
   const handleDragStart = (e) => {
@@ -59,11 +75,16 @@ const TaskCard = (props) => {
           {menuOpen && (
             <div className="task-card-menu">
               <div onClick={editModalOpenHandler}>Edit</div>
-              {editModalOpen && <EditModal onClose={editModalCloseHandler} />}
+              {editModalOpen && (
+                <EditModal onClose={editModalCloseHandler} task={props.task} />
+              )}
               <hr className="menuhr"></hr>
               <div onClick={deleteModalOpenHandler}>Delete</div>
               {deleteModalOpen && (
-                <DeleteModal onClose={deleteModalCloseHandler} />
+                <DeleteModal
+                  onClose={deleteModalCloseHandler}
+                  onDelete={handleDelete}
+                />
               )}
             </div>
           )}

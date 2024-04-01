@@ -28,9 +28,7 @@ const TaskBox = (props) => {
       </div>
       <div className="taskBoxBody">
         {props.tasks && props.tasks.length > 0 ? (
-          props.tasks.map((task, index) => (
-            <TaskCard key={task.id} task={task} />
-          ))
+          props.tasks.map((task) => <TaskCard key={task.id} task={task} />)
         ) : (
           <div>
             <p className="no-tasks-found">No Tasks Found</p>
