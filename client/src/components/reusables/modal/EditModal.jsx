@@ -50,7 +50,7 @@ const EditModal = (props) => {
     e.preventDefault();
     try {
       const id = taskData.id;
-      await axios.patch(`${baseURL}/api/editTask`, {
+      await axios.patch(`${baseURL}/api/tasks/editTask`, {
         taskId: id,
         status: taskData.status,
         priority: taskData.priority,

@@ -38,6 +38,6 @@ app.get("/", (req, res) => {
   res.send("Backend for TaskBoard App. https://www.github.com/utkkkarshhh");
 });
 
-app.listen(PORT, (req, res) => {
+app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

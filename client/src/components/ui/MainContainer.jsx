@@ -28,7 +28,7 @@ const MainContainer = () => {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await axios.get(`${baseURL}/api/tasks`);
+        const response = await axios.get(`${baseURL}/api/tasks/tasks`);
         const tasks = response.data;
         const categorizedTasks = {
           pendingTasks: tasks.filter((task) => task.type === "pendingTasks"),

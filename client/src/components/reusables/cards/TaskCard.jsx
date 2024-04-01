@@ -36,7 +36,7 @@ const TaskCard = (props) => {
     console.log(props.task._id);
     try {
       console.log("Entered try");
-      await axios.delete(`${baseURL}/api/deleteTask`, {
+      await axios.delete(`${baseURL}/api/tasks/deleteTask`, {
         params: {
           taskId: props.task._id,
         },

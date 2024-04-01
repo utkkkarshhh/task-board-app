@@ -23,7 +23,7 @@ const CreateModal = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${baseURL}/api/addTask`, addTask);
+      const response = await axios.post(`${baseURL}/api/tasks/addTask`, addTask);
 
       if (response.status === 200) {
         console.log("Task added successfully!");
