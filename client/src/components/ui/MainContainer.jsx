@@ -8,6 +8,7 @@ import Button from "../reusables/buttons/Button";
 import CreateModal from "../reusables/modal/CreateModal";
 import AddBox from "../reusables/cards/AddBox";
 import axios from "axios";
+import baseURL from "../baseURL";
 
 const MainContainer = () => {
   const [createModalVisibility, setCreateModalVisibility] = useState(false);
@@ -27,9 +28,7 @@ const MainContainer = () => {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await axios.get(
-          `${process.env.REACT_APP_BASE_URL}/api/tasks`
-        );
+        const response = await axios.get(`${baseURL}/api/tasks`);
         const tasks = response.data;
         const categorizedTasks = {
           pendingTasks: tasks.filter((task) => task.type === "pendingTasks"),

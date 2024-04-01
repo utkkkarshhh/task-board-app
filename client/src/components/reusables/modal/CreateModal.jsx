@@ -4,6 +4,7 @@ import "./CreateModal.css";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import Button from "../buttons/Button";
 import axios from "axios";
+import baseURL from "../../baseURL";
 
 const CreateModal = (props) => {
   const [addTask, setAddTask] = useState({
@@ -23,7 +24,7 @@ const CreateModal = (props) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_BASE_URL}/api/addTask`,
+        `${baseURL}/api/addTask`,
         addTask
       );
 

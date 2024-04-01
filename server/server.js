@@ -1,8 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const cors = require("cors");
 const mongoose = require("mongoose");
 const Task = require("./model/task");
+const cors = require("./middlewares/cors");
 require("dotenv").config();
 
 const PORT = process.env.PORT || 3001;
@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3001;
 // Middlewares
 const app = express();
 app.use(bodyParser.json());
-app.use(cors({ origin: "https://task-board-app-seven.vercel.app" }));
+app.use(cors);
 
 // Connect to MongoDB
 mongoose

@@ -4,6 +4,7 @@ import "./EditModal.css";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import Button from "../buttons/Button";
 import axios from "axios";
+import baseURL from "../../baseURL";
 
 const EditModal = (props) => {
   const [taskData, setTaskData] = useState({
@@ -49,7 +50,7 @@ const EditModal = (props) => {
     e.preventDefault();
     try {
       const id = taskData.id;
-      await axios.patch(`${process.env.REACT_APP_BASE_URL}/api/editTask`, {
+      await axios.patch(`${baseURL}/api/editTask`, {
         taskId: id,
         status: taskData.status,
         priority: taskData.priority,

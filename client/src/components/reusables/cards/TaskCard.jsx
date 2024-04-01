@@ -5,6 +5,7 @@ import Button from "../buttons/Button";
 import DeleteModal from "../modal/DeleteModal";
 import EditModal from "../modal/EditModal";
 import axios from "axios";
+import baseURL from "../../baseURL";
 
 const TaskCard = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -35,7 +36,7 @@ const TaskCard = (props) => {
     console.log(props.task._id);
     try {
       console.log("Entered try");
-      await axios.delete(`${process.env.REACT_APP_BASE_URL}/api/deleteTask`, {
+      await axios.delete(`${baseURL}/api/deleteTask`, {
         params: {
           taskId: props.task._id,
         },
